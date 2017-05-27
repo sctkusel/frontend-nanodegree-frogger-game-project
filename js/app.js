@@ -1,3 +1,10 @@
+var game = {
+    width: 505,
+    height: 606,
+    playerStartPositionX: 200,
+    playerStartPositionY: 430
+};
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
@@ -24,12 +31,57 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function() {
+    this.x = game.playerStartPositionX;
+    this.y = game.playerStartPositionY;
+    this.speed = 50;
+    this.sprite = 'images/char-boy.png';
+};
 
+Player.prototype.update = function() {
+    if (this.y < 10) {
+        this.x = game.playerStartPositionX;
+        this.y = game.playerStartPositionY;
+    }
+
+};
+
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.handleInput = function(keyCode) {
+    if (keyCode === 'spacebar') {
+
+    }
+    if (keyCode === 'left') {
+        if (player.x > 0) {
+            this.x -= player.speed;
+        }
+    }
+    if (keyCode === 'right') {
+        if (player.x < game.width - 110) {
+            this.x += player.speed;
+        }
+    }
+    if (keyCode === 'up') {
+        if (player.y > 0) {
+            this.y -= player.speed;
+        }
+    }
+    if (keyCode === 'down') {
+        if (player.y < game.height - 200) {
+            this.y += player.speed;
+        }
+    }
+
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
+var allEnemies = [];
+var player = new Player();
 
 
 // This listens for key presses and sends the keys to your
@@ -39,7 +91,8 @@ document.addEventListener('keyup', function(e) {
         37: 'left',
         38: 'up',
         39: 'right',
-        40: 'down'
+        40: 'down',
+        32: 'spacebar'
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
