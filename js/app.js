@@ -4,6 +4,7 @@ var game = {
     playerStartPositionX: 200,
     playerStartPositionY: 400,
     enemySize: 50,
+    gameStatus: false
 };
 
 // Enemies our player must avoid
@@ -24,12 +25,18 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x = (this.x + 100 + (this.speed * dt)) % (game.width + 150) - 100;
+    if (game.gameStatus) {
+        this.x = (this.x + 100 + (this.speed * dt)) % (game.width + 150) - 100;
+    }
+
 };
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    if (game.gameStatus) {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+
 };
 
 // Now write your own player class
@@ -57,12 +64,15 @@ Player.prototype.update = function() {
 };
 
 Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    if (game.gameStatus) {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+
 };
 
 Player.prototype.handleInput = function(keyCode) {
     if (keyCode === 'spacebar') {
-
+        game.gameStatus = true;
     }
     if (keyCode === 'left') {
         if (player.x > 0) {
