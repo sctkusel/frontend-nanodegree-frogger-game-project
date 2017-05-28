@@ -40,16 +40,20 @@ var Player = function() {
     this.y = game.playerStartPositionY;
     this.sprite = 'images/char-boy.png';
     this.reset = function() {
-        if (this.y < 10) {
-            this.x = game.playerStartPositionX;
-            this.y = game.playerStartPositionY;
-        };
+        this.x = game.playerStartPositionX;
+        this.y = game.playerStartPositionY;
     };
 };
 
 Player.prototype.update = function() {
-
-
+    for (var i = 0; i < allEnemies.length; i++) {
+        if ((this.x < allEnemies[i].x + 50 &&
+                this.x > allEnemies[i].x - 50) &&
+            this.y < allEnemies[i].y + 45 &&
+            this.y > allEnemies[i].y - 45) {
+            this.reset();
+        }
+    }
 };
 
 Player.prototype.render = function() {
