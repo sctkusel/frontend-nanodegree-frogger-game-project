@@ -136,6 +136,23 @@ var Engine = (function(global) {
             }
         }
 
+        ctx.font = "18pt Gloria Hallelujah";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#a12b04";
+        ctx.lineWidth = 3;
+        ctx.fillText("LIFES: " + game.lifes, 70, 100);
+
+        ctx.font = "18pt Gloria Hallelujah";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#a12b04";
+        ctx.lineWidth = 3;
+        ctx.fillText("SCORE: " + game.score, 370, 100);
+
+        ctx.font = "26pt Gloria Hallelujah";
+        ctx.textAlign = "center";
+        ctx.lineWidth = 3;
+        ctx.fillText("Press SPACEBAR to Start", canvas.width / 2, 330);
+
         renderEntities();
     }
 
