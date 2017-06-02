@@ -4,7 +4,9 @@ var game = {
     playerStartPositionX: 200,
     playerStartPositionY: 400,
     enemySize: 50,
-    gameStatus: false
+    gameStatus: false,
+    lifes: 4,
+    score: 0
 };
 
 // Enemies our player must avoid
@@ -28,7 +30,6 @@ Enemy.prototype.update = function(dt) {
     if (game.gameStatus) {
         this.x = (this.x + 100 + (this.speed * dt)) % (game.width + 150) - 100;
     }
-
 };
 
 // Draw the enemy on the screen, required method for game
@@ -36,7 +37,6 @@ Enemy.prototype.render = function() {
     if (game.gameStatus) {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
-
 };
 
 // Now write your own player class
@@ -96,7 +96,6 @@ Player.prototype.handleInput = function(keyCode) {
             this.y += 85;
         }
     }
-
 };
 
 // Now instantiate your objects.
