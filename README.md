@@ -12,4 +12,4 @@ Just clone/download the repo, unzip the folder to your destination of choice, th
 
 ## License
 
-The contents of this repository are covered under the [MIT License](https://github.com/sctkusel/frontend-nanodegree-frogger-game-project/master/LICENSE.txt).
+The contents of this repository are covered under the [MIT License](https://github.com/sctkusel/frontend-nanodegree-frogger-game-project/blob/master/LICENSE.txt).
