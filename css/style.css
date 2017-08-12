@@ -8,10 +8,20 @@ body {
 
 body,
 h1,
+h2,
 p {
     margin: 0;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #5169d4;
+}
+
+p {
+  display: none;
+  font-size: 45pt;
+  color: #a12b04;
 }
 
 .title {
-    color: #a12b04;
+    font-size: 30pt;
 }

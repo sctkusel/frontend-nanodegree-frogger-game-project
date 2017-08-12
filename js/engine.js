@@ -95,6 +95,9 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
+
+        allGems.update();
+
     }
 
     /* This function initially draws the "game level", it will then call
@@ -148,11 +151,6 @@ var Engine = (function(global) {
         ctx.lineWidth = 3;
         ctx.fillText("SCORE: " + game.score, 370, 100);
 
-        ctx.font = "26pt Gloria Hallelujah";
-        ctx.textAlign = "center";
-        ctx.lineWidth = 3;
-        ctx.fillText("Press SPACEBAR to Start", canvas.width / 2, 330);
-
         renderEntities();
     }
 
@@ -169,6 +167,8 @@ var Engine = (function(global) {
         });
 
         player.render();
+
+        allGems.render();
     }
 
     /* This function does nothing but it could have been a good place to
@@ -188,7 +188,8 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/Star.png'
     ]);
     Resources.onReady(init);
 
