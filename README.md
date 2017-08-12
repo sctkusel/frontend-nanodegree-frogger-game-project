@@ -9,3 +9,7 @@ Just clone/download the repo, unzip the folder to your destination of choice, th
 * Use the arrow keys to move.
 * The goal is to collect 5 stars, whilst avoiding the bugs.
 * You have 3 lives.
+
+## License
+
+The contents of this repository are covered under the [MIT License](https://github.com/sctkusel/frontend-nanodegree-frogger-game-project/master/LICENSE.txt).
