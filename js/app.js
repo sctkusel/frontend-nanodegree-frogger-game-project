@@ -98,6 +98,9 @@ Player.prototype.handleInput = function(keyCode) {
     if (keyCode === 'up') {
         if (player.y > 55) {
             this.y -= 81;
+        } else {
+            game.score += 10;
+            this.reset();
         }
     }
     if (keyCode === 'down') {
