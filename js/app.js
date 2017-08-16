@@ -1,3 +1,5 @@
+'use strict';
+
 //Game object with original stats of the game.
 var game = {
     width: 505,
