@@ -86,17 +86,17 @@ Player.prototype.handleInput = function(keyCode) {
       ctx.clearRect(1, 1, game.width, game.height);
     }
     if (keyCode === 'left') {
-        if (player.x > 0) {
+        if (this.x > 0) {
             this.x -= 101;
         }
     }
     if (keyCode === 'right') {
-        if (player.x < game.width - 110) {
+        if (this.x < game.width - 110) {
             this.x += 101;
         }
     }
     if (keyCode === 'up') {
-        if (player.y > 55) {
+        if (this.y > 55) {
             this.y -= 81;
         } else {
             game.score += 10;
@@ -104,7 +104,7 @@ Player.prototype.handleInput = function(keyCode) {
         }
     }
     if (keyCode === 'down') {
-        if (player.y < game.height - 230) {
+        if (this.y < game.height - 230) {
             this.y += 80;
         }
     }
