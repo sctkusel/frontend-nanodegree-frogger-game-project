@@ -155,19 +155,23 @@ Gem.prototype.update = function() {
 
 //Creates the new gem after the player collected the previous one.
 Gem.prototype.gemReset = function() {
-  if (game.gemCollected === 1) {
-    this.x = 205;
-    this.y = 240;
-  } else if (game.gemCollected === 2) {
-    this.x = 415;
-    this.y = 70;
-  } else if (game.gemCollected === 3) {
-    this.x = 0;
-    this.y = 325;
-  } else if (game.gemCollected === 4) {
-    this.x = 415;
-    this.y = 155;
+  if (game.gemCollected < 5) {
+    this.x = Math.floor((Math.random() * 405) + 50);
+    this.y = Math.floor((Math.random() * 206) + 55);
   }
+  // if (game.gemCollected === 1) {
+  //   this.x = 205;
+  //   this.y = 240;
+  // } else if (game.gemCollected === 2) {
+  //   this.x = 415;
+  //   this.y = 70;
+  // } else if (game.gemCollected === 3) {
+  //   this.x = 0;
+  //   this.y = 325;
+  // } else if (game.gemCollected === 4) {
+  //   this.x = 415;
+  //   this.y = 155;
+  // }
 };
 
 //Draw  the gem on the screen
